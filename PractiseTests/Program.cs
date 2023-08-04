@@ -1,12 +1,13 @@
 using PractiseTests.Services;
 using PractiseTests.Data;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CertificationDbContext>();
 
-//builder.Services.GetService<CertificationSeeder>();
-
+//builder.Services.AddTransient<CertificationSeeder>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Services.AddTransient<IMailService,MailService>();
 
 builder.Services.AddScoped<ICertificationRepository,CertificationRepository>();

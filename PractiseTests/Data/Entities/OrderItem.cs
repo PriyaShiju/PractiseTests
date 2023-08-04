@@ -14,6 +14,7 @@ namespace PractiseTests.Data.Entities
         public int OrderItemId { get; set; }
         //[ForeignKey("OrderId")]
         public int OrderId { get; set; } //order id details
+        
         public int ProductId { get; set; } // product Id details
         public string CategoryCode { get; set; }
 

@@ -1,6 +1,7 @@
 ﻿using PractiseTests.Data;
 using PractiseTests.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.Eventing.Reader;
 
 namespace PractiseTests.Data
 {
@@ -16,12 +17,15 @@ namespace PractiseTests.Data
             
         }
 
-        public IEnumerable<Certifications> GetAll()
+        public IEnumerable<Certifications> GetAll() //bool includeItems
         {
-            return _context.Certifications.ToList();
+            //if (includeItems)
+            //    return _context.Certifications.Include(o => o.Pro).thenInclude(p => p.Product).ToList();
+
+            //else
+                return _context.Certifications.ToList();
             // Install MVC newton json and services.AddNewtonJson(cfg => cfg.serializersettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
-            //return _context.Certifications.Include(o=> o.Items).thenInclude(p=> p.Product).ToList(); 
-        }
+        }    
         public Certifications GetCertificationTestById(int Id)
         {
             return _context.Certifications

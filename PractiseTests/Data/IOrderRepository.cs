@@ -1,4 +1,5 @@
 ﻿using PractiseTests.Data.Entities;
+using PractiseTests.ViewModels;
 
 namespace PractiseTests.Data
 {
@@ -7,6 +8,7 @@ namespace PractiseTests.Data
         void AddEntity(object model);
         IEnumerable<Order> GetAll();
         Order GetOrderById(int Id);
+        IEnumerable<OrderItemViewModel> GetItemsById(int Id);
         bool SaveChanges();
     }
 }

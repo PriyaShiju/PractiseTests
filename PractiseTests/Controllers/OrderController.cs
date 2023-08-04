@@ -2,6 +2,7 @@
 using PractiseTests.ViewModels;
 using PractiseTests.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using AutoMapper;
 
 namespace PractiseTests.Controllers
 {
@@ -12,21 +13,25 @@ namespace PractiseTests.Controllers
     {
         private readonly IOrderRepository _repository;
         private readonly ILogger<Order> _logger;
-        public OrderController(IOrderRepository repository, ILogger<Order> logger) 
+        private readonly IMapper _mapper;
+
+        public OrderController(IOrderRepository repository, ILogger<Order> logger, IMapper mapper) 
         {
             _repository = repository;
             _logger = logger;
+            this._mapper = mapper;
         }
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public ActionResult<IEnumerable<Order>> GetAll() 
+        public ActionResult<IEnumerable<OrderViewModel>> GetAll() 
         {
             try
             {
-                return Ok(_repository.GetAll());
+                return Ok(_mapper.Map<IEnumerable<OrderViewModel>>(_repository.GetAll()));
+                //_mapper.Map<IEnumerable<OrderViewModel>>
             }
-            catch(Exception ex) {
+            catch (Exception ex) {
                 _logger.LogError($"Failed to get Order:  {ex}");
                 return BadRequest("Failed to get Order:  " + ex.Message);
             }
@@ -40,7 +45,7 @@ namespace PractiseTests.Controllers
             {
                 var order = _repository.GetOrderById(Id);
                 if (order != null)
-                    return Ok(order);
+                    return Ok(_mapper.Map<Order,OrderViewModel>(order));
                 else
                     return NotFound();
             }
@@ -58,12 +63,13 @@ namespace PractiseTests.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    var newOrder = new Order()
-                    {
-                        OrderDate = model.OrderDate,
-                        OrderId = model.OrderId,
-                        OrderNo = model.OrderNo
-                    };
+                    var newOrder = _mapper.Map<OrderViewModel,Order>(model);
+                    //var newOrder = new Order()
+                    //{
+                    //    OrderDate = model.OrderDate,
+                    //    OrderId = model.OrderId,
+                    //    OrderNo = model.OrderNo
+                    //};
 
                     if (newOrder.OrderDate == DateTime.MinValue)
                     {
