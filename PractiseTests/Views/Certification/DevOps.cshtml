@@ -1,0 +1,80 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model IEnumerable<Certifications>
+
+
+@{
+    ViewData["Title"] = "DevOps Certification Practise Tests";
+}
+
+
+<section class="new_service_area">
+    <div class="col-sm-12"><h3> @ViewData["Title"] </h3></div>
+    <div class="row">
+
+    @foreach (var p in Model) 
+    {
+    <div class="col-md-3">
+            <div class="border bg-light rounded p-1 text-center">  
+    <h5>
+        @p.CertificationName 
+    </h5>
+    <img class="img-fluid w-50 h-50"  alt="@p.CertificationName" src="~/img/@p.FileName" /> 
+    <div class="text-left"> 
+    <ul>
+                @* class="productprops  product-info  style="width:200px;height:200px;""*@
+        <li>Test : @p.CertificationDescription</li>
+        <li>Price : $@p.Price </li>
+        <li>Test Papers : @p.NoTestPapers </li>
+        <li>Questions : @p.Questions questions each</li>
+        
+    </ul>
+    </div>
+    <a class="btn btn-primary" asp-controller="Certification" asp-action="PractiseTestList" asp-route-TestType="0" asp-route-id="@p.CertificationTestId">     Free Practise </a>
+
+    <a class="btn btn-primary" asp-controller="Order" asp-action="SaveOrder" asp-route-TestType="1" asp-route-Id="@p.CertificationTestId">     Buy </a>
+
+    </div> 
+       
+    </div>
+}
+</div>
+</section>
+<section class="new_service_area">
+    <div class="row"><div class="col-sm-12"><h3>POPULAR <span>TESTS</span></h3></div></div>
+    <div class="row">
+        <div class="category-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="category-thumb transition shadow_box bordered">
+                <a class="category-thumb-inner" asp-area="" asp-controller="Certification" asp-action="DevOps">
+
+                    <h4>DevOps Foundation </h4>
+                </a>
+            </div>
+        </div>
+        <div class="category-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="category-thumb transition shadow_box bordered">
+                <a class="category-thumb-inner" asp-area="" asp-controller="Certification" asp-action="AWS">
+                    <h4>AWS Cloud Practitioner </h4>
+                </a>
+            </div>
+        </div>
+        <div class="category-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="category-thumb transition shadow_box bordered">
+                <a class="category-thumb-inner" asp-area="" asp-controller="Certification" asp-action="Python">
+                    <h4>Python Certification (PCEP) </h4>
+                </a>
+            </div>
+        </div>
+
+        <div class="category-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="category-thumb transition shadow_box bordered">
+                <a class="category-thumb-inner" asp-area="" asp-controller="Certification" asp-action="AWS">
+                    <h4>AWS Solutions Architect Professional </h4>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>

@@ -1,0 +1,96 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div id="checkout-cart" class="container">
+
+    <div class="row">
+        <div id="content" class="col-lg-8 col-md-12">
+            <form method="post" enctype="multipart/form-data">
+                <div class="table-responsive">
+                    <table class="table add_to_cart">
+                        <thead>
+                            <tr>
+                                <td class="text-left" style="width:500px;">Product Name</td>
+                                <td class="text-left">Total</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <th class="text-left">
+                                    <a target="_blank" href="~/Order"> </a>
+
+                                </th>
+                                <td class="text-left"><span class="wish_price theme-cl">$15.99</span></td>
+                                <!-- <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                                    <input type="text" name="quantity[3679]" value="1" size="1" class="form-control" />
+                                    <span class="input-group-btn">
+                                    <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary"><i class="fa fa-sync-alt"></i></button>
+                                    </span></div></td>
+                                <td class="text-right">$15.99</td> -->
+                                <td><button type="button" data-toggle="tooltip" title="Remove" class="btn btn-remove" onclick="cart.remove('3679');">Remove</button></td>
+                            </tr>
+                            <tr>
+                                <th class="text-left">
+                                    <a target="_blank" href="https://www.testpreptraining.com/google-professional-cloud-devops-engineer-gcp-practice-exam">Google Professional Cloud DevOps Engineer (GCP) Practice Exam</a>
+
+                                </th>
+                                <td class="text-left"><span class="wish_price theme-cl">$15.99</span></td>
+                                <!-- <td class="text-left"><div class="input-group btn-block" style="max-width: 200px;">
+                                    <input type="text" name="quantity[3678]" value="1" size="1" class="form-control" />
+                                    <span class="input-group-btn">
+                                    <button type="submit" data-toggle="tooltip" title="Update" class="btn btn-primary"><i class="fa fa-sync-alt"></i></button>
+                                    </span></div></td>
+                                <td class="text-right">$15.99</td> -->
+                                <td><button type="button" data-toggle="tooltip" title="Remove" class="btn btn-remove" onclick="cart.remove('3678');">Remove</button></td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </form>
+            <div class="checkout_coupon checkout">
+                <div class="input-group">
+                    <input type="text" name="coupon" value="" placeholder="Enter your coupon here" id="input-coupon" class="form-control" />
+                    <span class="input-group-btn">
+                        <input type="button" value="Apply Coupon" id="button-coupon" data-loading-text="Loading..." class="btn btn-white" />
+                    </span>
+                </div>
+
+
+@*
+﻿<div class="row">
+    <h3>Confirm Order</h3>
+    <table class="table table-bordered table-hover">
+        <tr *ngFor="let o of data.order.items">
+            <td><img src="/img/{{ o.productArtId }}.jpg" alt="o.productTitle" class="img-thumbnail checkout-thumb" /></td>
+            <td>{{ o.productCategory }}({{ o.productSize }}) - {{ o.productArtist }}: {{ o.productTitle }}</td>
+            <td>{{ o.quantity }}</td>
+            <td>{{ o.unitPrice|currency:'USD':true }}</td>
+            <td>{{ (o.unitPrice * o.quantity)|currency:'USD':true }}</td>
+        </tr>
+    </table>
+    <div class="col-md-4 col-md-offset-8 text-right">
+        <table class="table table-condensed">
+            <tr>
+                <td class="text-right">Subtotal</td>
+                <td class="text-right">{{ data.order.subtotal|currency:'USD':true }}</td>
+            </tr>
+            <tr>
+                <td class="text-right">Shipping</td>
+                <td class="text-right">$ 0.00</td>
+            </tr>
+            <tr>
+                <td class="text-right">Total:</td>
+                <td class="text-right">{{ data.order.subtotal|currency:'USD':true }}</td>
+            </tr>
+        </table>
+        <button class="btn btn-success" (click)="onCheckout()">Complete Purchase</button>
+        <a routerLink="/" class="btn btn-info">Cancel</a>
+    </div>
+
+    </div>*@

@@ -1,0 +1,27 @@
+﻿@model List<String>
+
+
+@{
+    ViewData["Title"] = "Practise Test Papers";
+}
+<h3> @ViewData["Title"] </h3>
+
+<div class="rows">
+    @foreach (var p in Model)
+    {
+        <div class="col-md-4 product-info">
+            
+           
+            <ul >
+                <li><a  asp-route-TestPaper="@p" asp-controller="Certification" asp-action="PractiseTestPaper"> @p </a></li>
+                              
+               
+            </ul>
+
+
+
+        </div>
+    }
+    <h5><a class="btn btn-info" asp-area="" asp-controller="Certification" asp-action="DevOps">  Back to Practise Tests </a></h5>
+
+</div>

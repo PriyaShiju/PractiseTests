@@ -1,0 +1,17 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Information";
+}
+
+@*<h1 class="text-danger">Sorry for the inconvenience caused.</h1>*@
+<h2 class="text-danger">The website is under construction. </h2>
+    
+<h3>Thank your for accessing our website.</h3>
+
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}

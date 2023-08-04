@@ -1,0 +1,34 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Register / Sign Up";
+}
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<form id="frmSignUp" method="post" class="col-md-6 offset-md-3 card card-body bg-light">
+        <div asp-validation-summary="ModelOnly" class="container"> </div>
+        <div class="form-group">
+            <label asp-for="Name"> Name: </label> 
+            <input asp-for="Name" class="form-control"  type="text" /> 
+            <span asp-validation-for="Name"> </span><br />
+        </div>
+        <div class="form-group">
+             <label asp-for="EmailAddress"> Email:</label><input class="form-control" asp-for="EmailAddress" type="email" /><span asp-validation-for="EmailAddress"> </span><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password"> Password:</label><input class="form-control" asp-for="Password" type="text" /><span asp-validation-for="Password"> </span><br />
+        </div>
+        <div class="form-group">
+            <label asp-for="CPassword"> Confirm Password:</label><input class="form-control" asp-for="CPassword" type="text" /><span asp-validation-for="CPassword"> </span><br />
+        </div>
+        <div class="form-group">
+            <button type="Submit" class="btn btn-success"> Register </button>
+            <button class="btn btn-default">Cancel</button>
+            <div class="alert-success">@ViewBag.UserMessage</div>
+        </div>
+</form>

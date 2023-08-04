@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TestPaper>
+@{
+    ViewData["Title"] = "Practise Test Paper";
+}
+<h3> @ViewData["Title"] </h3>
+
+<div class="row">
+   @* <h5><a class="btn btn-info" asp-area="" asp-controller="Certification" asp-action="DevOps">  Back to Practise Tests </a></h5>
+   *@ <form>
+        @{
+            int rowNo = 1;
+        }
+        <div class="col-md-12" id="TestPaper">
+            @foreach (var p in Model)
+            {
+
+                <div class="border bg-light rounded p-1">
+                    <div id="@("Question"+@rowNo)" ><h5>@rowNo. @p.Question     </h5>   </div>
+
+                    <ul id="Answerlist" class="list-style:none;" >
+                        <li><input type="radio" id="@("Answer"+@rowNo)" name="@("Answer"+@rowNo)" value="A"><label class="lblAnswer" for="A"> @p.Answer1</label></li>
+                        <li><input type="radio" id="@("Answer"+@rowNo)" name="@("Answer"+@rowNo)" value="B"><label class="lblAnswer" for="B"> @p.Answer2</label></li>
+                        <li><input type="radio" id="@("Answer"+@rowNo)" name="@("Answer"+@rowNo)" value="C"><label class="lblAnswer" for="C"> @p.Answer3</label></li>
+                        <li><input type="radio" id="@("Answer"+@rowNo)"  name="@("Answer"+@rowNo)" value="D"><label class="lblAnswer" for="D"> @p.Answer4</label></li>
+
+                    </ul>
+                    <input type="hidden" id="@("CorrectAnswer"+@rowNo)" value=@p.CorrectAnswer />
+                    
+                    <input class="lblanswer" id="@("DisplayAnswer"+@rowNo)"  />  
+                    @*<div> <button class="btn btn-primary" id="btnNext" type="submit" onclick="checkAnswer()">     Next </button></div>
+            <div> <button class="btn btn-primary" id="btnContinue" >     Continue </button></div>*@
+
+                </div>
+                ++@rowNo;
+                
+            }
+            <input type="hidden" id=hiddenrowNo value=@rowNo />
+            <button type="button" class="btn btn-primary" id="btnSaveMarks">     Submit </button>
+            <p id="displayMarks" > </p>
+            
+            @* <a   class="btn btn-primary" id="btnClose" asp-area="" asp-controller="Certification" asp-action="SaveResults">     Close </a>*@
+            <h5><a class="btn btn-info" asp-area="" asp-controller="Certification" asp-action="DevOps">  Back to Practise Tests </a></h5>
+    
+        </div>
+    </form>
+</div>

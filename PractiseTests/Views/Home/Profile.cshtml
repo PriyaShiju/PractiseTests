@@ -1,0 +1,26 @@
+﻿@model UserViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+@section Scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<form id="frmProfile" title="Profile" method="post" class="col-md-6 offset-md-3 card card-body bg-light">
+    <div asp-validation-summary="ModelOnly" class="container"> </div>
+    <div class="form-group">
+        <label asp-for="Name"> Name: </label> <label asp-for="Name" >  </label>
+    </div>
+    <div class="form-group"><label asp-for="EmailAddress"> Email:</label><label asp-for="EmailAddress" ></label></div>
+    <div class="form-group">
+        <label asp-for="Password"> Password:</label><label text="*********"></label>
+        <a asp-area="" asp-controller="Home" asp-action="ChangePassword">Change Password </a>
+       
+    </div>
+        
+    
+</form>

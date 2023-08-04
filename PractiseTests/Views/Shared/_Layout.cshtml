@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Free Practise Tests </title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" type="text/css"  />
+    <link href="~/lib/fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"  />
+    <link href="~/lib/fortawesome/fontawesome-free/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/lib/fortawesome/fontawesome-free/css/brands.min.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" type="text/css"  />
+    <link rel="stylesheet" href="~/PractiseTests.styles.css" asp-append-version="true" type="text/css" />
+</head>
+<body>
+    <header >
+        <div class="notice">First Time Purchase 30% off | Use code OFF30 at checkout</div>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+               @*<img style="width:250px;height:100px;" src="~/img/exampractisetest.png" />*@
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><h2><i class="fas fa-layer-group"> Free Practise Tests </i></h2></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item active">
+
+                            <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Index">&nbsp;Home </a>
+                            
+                        </li>
+                        <li class="nav-item dropdown" id="myDropdown">
+
+                            <a class="nav-link dropdown-toggle text-white-50" href="#" data-bs-toggle="dropdown">  <i class="fas fa-down">&nbsp;Practise Tests </i></a>
+                           
+                            <ul class="dropdown-menu bg-light ">
+                                <li>
+                                    <a class="dropdown-item " href="#"> Certifications &raquo; </a>
+                                    <ul class="submenu dropdown-menu bg-light ">
+                                        <li><a class="dropdown-item "  asp-area="" asp-controller="Certification" asp-action="DevOps">DevOps</a></li>
+                                        <li><a class="dropdown-item " href="#">Python</a></li>
+                                        <li><a class="dropdown-item " href="#">AWS Cloud Practioner</a></li>
+                                        <li><a class="dropdown-item " href="#">AWS Solution Architect</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item " href="#"> Programming Language &raquo; </a>
+                                    <ul class="submenu dropdown-menu bg-light ">
+                                        <li><a class="dropdown-item " href="#">Java</a></li>
+                                        <li><a class="dropdown-item " href="#">ASP.NET</a></li>
+                                    </ul>
+                        
+                                </li>
+                            </ul>
+                        </li>
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50" asp-area="" asp-controller="Career" asp-action="Career"> <i class="fas fa-career">&nbsp;Careers</i></a>
+                        </li>
+                       @* <li class="nav-item">
+                            <a class="nav-link text-white-50" asp-area="" asp-controller="Home" asp-action="Order"><i class="fas fa-order">Orders</i></a>
+                        </li>*@ 
+                     </ul>
+                </div>
+                <div class="width3 col-md-6" style="display:flex;">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>
+                        <a title="checkout" class="btn cart btn-primary" asp-controller="Home" asp-action="Checkout">
+                            <i class="fas fa-shopping-cart"></i><span></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Register"> <i class="fas fa-signin">SignUp</i></a>
+                        </li>
+                        <li class ="nav-link text-white">|</li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login"> <i class="fas fa-register">Login</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="home-banner">
+            <h1>Pass your exams in first attempt! </h1>
+
+        </section>
+        <main role="main" class="pb-3 p-5">
+            @RenderBody()
+        </main>
+       
+    </div>
+   
+   @* <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2023 - Free Practise Tests - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>*@
+    <footer>
+        <div class="container">
+            <div class="row">
+               
+                <div class="col-sm-3" style="font-size: 14px;">© 2023 Free Practise Tests</div>
+                <div class="col-sm-6 text-center">
+                    <ul class="list-unstyled links" id="aboutuslink">
+                        <li class="footerlink"><a asp-area="" asp-controller="Home" asp-action="Aboutus">About Us</a></li>
+                        <li class="footerlink"><a asp-area="" asp-controller="Home" asp-action="Copyright">Copyright</a></li>
+                        <li class="footerlink"><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy Policy</a></li>
+                        <li class="footerlink"><a asp-area="" asp-controller="Home" asp-action="Terms">Terms &amp; Conditions</a></li>
+                        <li class="footerlink"><a asp-area="" asp-controller="Home" asp-action="Contact">Contact us</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <ul class="list-unstyled social">
+                        <li><a target="_blank" href="https://www.facebook.com/FreePractiseTests"><i class="fab fa-facebook "></i></a></li>
+                        <li><a target="_blank" href="https://twitter.com/FreePractiseTests"><i class="fab fa-twitter"></i></a></li>
+                        <li><a target="_blank" href="https://www.linkedin.com/company/FreePractiseTests/"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copyright">
+                Disclaimer:<br>
+                FreePractiseTests material do not contain actual Exam Questions or material. FreePractiseTests doesn't offer real Exam Questions.<br>
+                All the logos used on the website are registered trademarks of the respective Corporation.<br>
+                FreePractiseTests Materials do not contain actual questions and answers from DevOps Certification Exams. <br>
+                FreePractiseTests.com does not offer exam dumps or questions from actual exams. We offer learning material and practice tests created by subject matter experts to assist and help learners prepare for those exams. <br />
+                All certification brands used on the website are owned by the respective brand owners. FreePractiseTests does not own or claim any ownership on any of the brands.
+            </p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
