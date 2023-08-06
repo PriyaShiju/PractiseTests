@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/PractiseTests/Migrations/20230805032251_Identity.cs
+/PractiseTests/Migrations/20230805032251_Identity.Designer.cs
+/PractiseTests/Data/SQLQuery1.sql
