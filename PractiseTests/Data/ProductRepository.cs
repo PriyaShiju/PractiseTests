@@ -11,12 +11,12 @@ namespace PractiseTests.Data
         }
         public IEnumerable<Product> GetAll()
         {
-            return _context.Product.ToList();
+            return _context.Products.ToList();
         }
 
         public Product GetProductById(int Id)
         {
-            return _context.Product.Where(o => o.ProductId == Id).FirstOrDefault();
+            return _context.Products.Where(o => o.ProductId == Id).FirstOrDefault();
         }
 
         public bool SaveChanges()

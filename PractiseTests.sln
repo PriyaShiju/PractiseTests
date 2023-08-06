@@ -5,7 +5,7 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PractiseTests", "PractiseTests\PractiseTests.csproj", "{76270B0D-FEE5-4E9A-AB7D-967A2610A533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIPractiseTests", "WebAPIPractiseTests\WebAPIPractiseTests.csproj", "{FB566ED1-F5A9-4A3B-B4FE-EF12B692889B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIPractiseTests", "WebAPIPractiseTests\WebAPIPractiseTests.csproj", "{FB566ED1-F5A9-4A3B-B4FE-EF12B692889B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

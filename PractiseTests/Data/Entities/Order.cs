@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PractiseTests.Areas.Identity.Data;
 
 namespace PractiseTests.Data.Entities
 {
@@ -15,5 +16,6 @@ namespace PractiseTests.Data.Entities
         public string OrderNo { get; set; }
         //public ICollection<OrderItem> Items { get; set; }
         public string Active { get; set; } = "Y";
+        public PractiseTestsUser? User { get; set; } = null;
     }
 }

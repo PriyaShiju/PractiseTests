@@ -6,6 +6,7 @@ using System.Diagnostics;
 using Microsoft.VisualBasic;
 using System.Reflection.Metadata.Ecma335;
 using PractiseTests.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PractiseTests.Controllers
 {
@@ -88,6 +89,7 @@ namespace PractiseTests.Controllers
 
             return View();
         }
+        [Authorize]
         public IActionResult Checkout()
         {
 

@@ -68,13 +68,14 @@
                         <a title="checkout" class="btn cart btn-primary" asp-controller="Home" asp-action="Checkout">
                             <i class="fas fa-shopping-cart"></i><span></span></a>
                         </li>
-                        <li class="nav-item">
+                        <partial name="_LoginPartial" />
+                       @* <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Register"> <i class="fas fa-signin">SignUp</i></a>
                         </li>
                         <li class ="nav-link text-white">|</li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login"> <i class="fas fa-register">Login</i></a>
-                        </li>
+                        </li>*@
                     </ul>
                 </div>
             </div>

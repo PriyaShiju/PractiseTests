@@ -21,7 +21,7 @@ namespace PractiseTests.Data
             try
             {
                 _logger.LogInformation("PractiseTestRepo - GetAll is called");
-                return _context.TestPaper.ToList();
+                return _context.TestPapers.ToList();
             }
             catch(Exception ex) 
             {
@@ -32,15 +32,14 @@ namespace PractiseTests.Data
 
         public List<String> GetPractiseTestList(int CertificateTestId, bool TestType)
         {
-
-            var results = _context.TestPaper
-                //.GroupBy(m => new { m.TestPaperName })
-                .Where(p => p.CertificationTestId == CertificateTestId && p.Active == TestType)
-                //.Select(e => new { e.TestPaperName })
-                //.DistinctBy(s=> new {s.TestPaperName})
+            var results = _context.TestPapers   //.GroupBy(m => new { m.TestPaperName })
+                .Where(p => p.CertificationTestId == CertificateTestId && p.Active == TestType) 
                 .ToList();
+
+            //.Select(e => new { e.TestPaperName })  //.DistinctBy(s=> new {s.TestPaperName})
             //DataTable dt = new DataTable();
             //dt.Columns.Add("TestPaperName", typeof(string));
+
             List<String> TestPapersList = new List<String>();
             foreach (var row in results)
             {
@@ -54,7 +53,7 @@ namespace PractiseTests.Data
         public IEnumerable<TestPaper> GetTestPaper(int CertificateTestId, bool TestType , string TestPaper)
         {
             
-             return _context.TestPaper.Where(p => p.CertificationTestId == CertificateTestId && p.Active == TestType && p.TestPaperName==TestPaper)
+             return _context.TestPapers.Where(p => p.CertificationTestId == CertificateTestId && p.Active == TestType && p.TestPaperName==TestPaper)
                 .ToList();
     }
 

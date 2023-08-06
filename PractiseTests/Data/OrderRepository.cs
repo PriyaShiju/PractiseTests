@@ -18,11 +18,11 @@ namespace PractiseTests.Data
             //    return _context.Order.Include(o => o.Pro).thenInclude(p => p.Product).ToList();
 
             //else
-                return _context.Order.ToList();
+                return _context.Orders.ToList();
         }
         public Order GetOrderById(int Id)
         {
-            return _context.Order.Where(o => o.OrderId == Id).FirstOrDefault();
+            return _context.Orders.Where(o => o.OrderId == Id).FirstOrDefault();
         }
         public IEnumerable<OrderItemViewModel> GetItemsById(int Id)
         {
@@ -35,8 +35,8 @@ namespace PractiseTests.Data
            //    RoleName = m.ro.RoleName
            //});
 
-            var orderitems = _context.Order.Join(_context.OrderItem, o => o.OrderId, oi => oi.OrderId, (o, oi) => new { o, oi })
-                .Join(_context.Product, r => r.oi.ProductId, p => p.ProductId, (r, p) => new { r, p })
+            var orderitems = _context.Orders.Join(_context.OrderItems, o => o.OrderId, oi => oi.OrderId, (o, oi) => new { o, oi })
+                .Join(_context.Products, r => r.oi.ProductId, p => p.ProductId, (r, p) => new { r, p })
                 .Select(m => new OrderItemViewModel
                 {
                     OrderId = m.r.o.OrderId,

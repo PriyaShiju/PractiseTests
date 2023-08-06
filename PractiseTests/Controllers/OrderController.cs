@@ -3,6 +3,8 @@ using PractiseTests.ViewModels;
 using PractiseTests.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using PractiseTests.Areas.Identity.Data;
 
 namespace PractiseTests.Controllers
 {
@@ -14,7 +16,10 @@ namespace PractiseTests.Controllers
         private readonly IOrderRepository _repository;
         private readonly ILogger<Order> _logger;
         private readonly IMapper _mapper;
+        private readonly UserManager<PractiseTestsUser> _userManager;
+        private readonly SignInManager<PractiseTestsUser> _signInManager;
 
+        
         public OrderController(IOrderRepository repository, ILogger<Order> logger, IMapper mapper) 
         {
             _repository = repository;
@@ -99,9 +104,10 @@ namespace PractiseTests.Controllers
             return BadRequest("Failed to Save Entity : " + model);
         }
 
-        public IActionResult Index()
-        {
-            return View();
+        //public IActionResult Index( UserManager<PractiseTestsUser> userManager, SignInManager<PractiseTestsUser> signInManager)
+        //    {
+        //        _userManager = userManager;
+        //        _signInManager = signInManager;
+        //    }
         }
-    }
 }
