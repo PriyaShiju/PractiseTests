@@ -57,8 +57,8 @@ namespace PractiseTests.Pages
 
             Input = new InputModel
             {
-                Name = user.Name,
-                DOB = user.DOB,
+                Name = user.UserName,
+                //DOB = user.DOB,
                 PhoneNumber = phoneNumber
             };
         }
@@ -100,15 +100,15 @@ namespace PractiseTests.Pages
                 }
             }
 
-            if (Input.Name != user.Name)
+            if (Input.Name != user.UserName)
             {
-                user.Name = Input.Name;
+                user.UserName = Input.Name;
             }
 
-            if (Input.DOB != user.DOB)
-            {
-                user.DOB = Input.DOB;
-            }
+            //if (Input.DOB != user.DOB)
+            //{
+            //    user.DOB = Input.DOB;
+            //}
 
             await _userManager.UpdateAsync(user);
             await _signInManager.RefreshSignInAsync(user);

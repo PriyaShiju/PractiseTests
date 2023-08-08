@@ -14,5 +14,3 @@ select * from aspnetuserlogins
 select * from aspnetusertokens
 select * from aspnetroles
 select * from aspnetroleclaims
-
-

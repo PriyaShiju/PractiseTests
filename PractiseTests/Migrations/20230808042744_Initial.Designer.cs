@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PractiseTests.Data;
 
@@ -11,9 +12,11 @@ using PractiseTests.Data;
 namespace PractiseTests.Migrations
 {
     [DbContext(typeof(CertificationDbContext))]
-    partial class CertificationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230808042744_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

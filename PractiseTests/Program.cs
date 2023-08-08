@@ -9,30 +9,29 @@ using PractiseTests.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("AppDbContext"); 
-builder.Services.AddDbContext<CertificationDbContext>(options => options.UseSqlServer(connectionString)); 
-builder.Services.AddDefaultIdentity<PractiseTestsUser>()
-                                            .AddEntityFrameworkStores<CertificationDbContext>();
 
-//builder.Services.AddDbContext<CertificationDbContext>();
-//builder.Services.AddTransient<CertificationSeeder>();
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
-builder.Services.AddTransient<IMailService,MailService>();
+builder.Services.AddDbContext<CertificationDbContext>(options => options.UseSqlServer(connectionString)); 
+builder.Services.AddDefaultIdentity<PractiseTestsUser>().AddEntityFrameworkStores<CertificationDbContext>();
+
 //builder.Services.AddIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 //    .AddRoles<IdentityRole>()
 //    .AddEntityFrameworkStores<CertificationDbContext>();
+//builder.Services.AddTransient<CertificationSeeder>();
 
-//builder.Services.TryAddScoped<UserManager<StoreUser>>();
-//builder.Services.TryAddScoped<SignInManager<StoreUser>>();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddTransient<IMailService,MailService>();
 builder.Services.AddScoped<ICertificationRepository,CertificationRepository>();
 builder.Services.AddScoped<IPractiseTestListRepository, PractiseTestListRepository>();
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
 // Add services to the container.
+builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 
 //.addNewtonsoft
 
-builder.Services.AddRazorPages();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
