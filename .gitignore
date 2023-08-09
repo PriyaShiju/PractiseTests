@@ -364,3 +364,9 @@ FodyWeavers.xsd
 /PractiseTests/Migrations/20230805032251_Identity.cs
 /PractiseTests/Migrations/20230805032251_Identity.Designer.cs
 /PractiseTests/Data/SQLQuery1.sql
+/PractiseTestsDataAccess/Migrations/20230808112102_Identity.cs
+/PractiseTestsDataAccess/Migrations/20230808112102_Identity.Designer.cs
+/PractiseTestsDataAccess/Migrations/20230809020430_Identity1.cs
+/PractiseTestsDataAccess/Migrations/20230809020430_Identity1.Designer.cs
+/PractiseTestsDataAccess/Migrations/CertificationDbContextModelSnapshot.cs
+/SQLQuery1.sql

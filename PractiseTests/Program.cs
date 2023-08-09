@@ -13,7 +13,7 @@ var connectionString = builder.Configuration.GetConnectionString("AppDbContext")
 builder.Services.AddDbContext<CertificationDbContext>(options => options.UseSqlServer(connectionString)); 
 builder.Services.AddDefaultIdentity<PractiseTestsUser>().AddEntityFrameworkStores<CertificationDbContext>();
 
-//builder.Services.AddIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//builder.Services.AddIdentity<PractiseTestsUser>(options => options.SignIn.RequireConfirmedAccount = true)
 //    .AddRoles<IdentityRole>()
 //    .AddEntityFrameworkStores<CertificationDbContext>();
 //builder.Services.AddTransient<CertificationSeeder>();

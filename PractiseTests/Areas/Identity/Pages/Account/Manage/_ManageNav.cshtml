@@ -1,8 +1,4 @@
-﻿@using PractiseTests.Areas.Identity.Pages.Account.Manage;
-@using PractiseTests.Areas.Identity.Data;
-@using Microsoft.AspNetCore.Identity;
-
-@inject SignInManager<PractiseTestsUser> SignInManager
+﻿@inject SignInManager<PractiseTestsUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

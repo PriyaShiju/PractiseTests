@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -22,13 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\Identity\Data\CertificationDbContext.cs" />
     <Compile Remove="Areas\Identity\Data\PractiseTestsUser.cs" />
     <Compile Remove="Pages\Error.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml" />
-    <Content Remove="Areas\Identity\Pages\Account\_ViewImports.cshtml" />
+    <Content Remove="Areas\Identity\Pages\Account\Manage\_Layout.cshtml" />
     <Content Remove="Pages\Error.cshtml" />
     <Content Remove="Views\Home\Register.cshtml" />
   </ItemGroup>

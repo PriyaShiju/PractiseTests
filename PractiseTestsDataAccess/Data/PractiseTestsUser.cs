@@ -16,7 +16,7 @@ namespace PractiseTests.Areas.Identity.Data
         public override string Id { get; set; }
 
         [PersonalData]
-        public string UserName { get; set; }
+        public string PractiseTestUserName { get; set; }
         //[PersonalData]
         //public DateTime DOB { get; set; }
 
